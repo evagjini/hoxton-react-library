@@ -1,15 +1,12 @@
 type Props = {
-    action: () => void
-    text: string
-}
+    onClick: () => void;
+    children: string;
+};
 
-export function Button({ action, text }: Props) {
+export function Button({ children, ...props }: Props) {
     return (
-        <button className="button"
-            onClick={action}>
-            {text}
-
-
+        <button className="button" {...props}>
+            {children}
         </button>
-    )
+    );
 }
